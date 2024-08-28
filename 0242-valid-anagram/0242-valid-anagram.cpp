@@ -5,15 +5,15 @@ public:
         int m = t.length();
         if(n != m) return false;
         
-        unordered_map<char,int> mpp;
+        vector<int> mpp(26,0);
         
         for(int i=0; i<n; i++){
             mpp[s[i]-'a']++;
             mpp[t[i]-'a']--;
         }
         
-        for(auto i : mpp){
-            if(i.second != 0) return false;
+        for(auto it : mpp){
+            if(it != 0) return false;
         }
         return true;
     }
