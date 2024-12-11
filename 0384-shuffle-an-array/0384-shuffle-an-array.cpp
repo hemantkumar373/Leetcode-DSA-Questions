@@ -14,11 +14,9 @@ public:
     
     vector<int> shuffle() {
         vector<int> shuffled = original;
-        int rem = n;
-        for(int i = n - 1; i >= 0; i--) {
-            int j = rand() % rem;
+        for(int i = 0; i < n; i++) {
+            int j = rand() % n;
             swap(shuffled[i], shuffled[j]);
-            rem--;
         }
         return shuffled;
     }
